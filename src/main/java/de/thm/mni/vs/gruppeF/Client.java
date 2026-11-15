@@ -76,7 +76,8 @@ public class Client {
 
     // Methode, um die Benutzereingaben zu interpretieren und die entsprechenden Aktionen auszuführen
     public static void interpretCommand(String cmd) {
-        String[] cmds = cmd.trim().split("\\s+");
+        // Die Eingabe in einzelne Teile aufteilen, um das Kommando und die Argumente zu extrahieren (Limitierung auf 3 Teile, um Nachrichten aus mehreren Wörtern zu ermöglichen)
+        String[] cmds = cmd.trim().split("\\s+", 3);
 
         if (cmd.isBlank()) {
             return;
